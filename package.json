@@ -1,0 +1,16 @@
+{
+  "name": "hi-low-sniper-gold-v10",
+  "displayName": "SniperGold V10",
+  "version": "10.0.0",
+  "private": true,
+  "description": "SniperGold V10 Cordova Android project based on the supplied FINAL-WIRING-IMPROVED HTML.",
+  "scripts": {
+    "prepare": "cordova prepare android",
+    "build:android": "cordova build android --debug",
+    "build:release": "cordova build android --release"
+  },
+  "devDependencies": {
+    "cordova": "^13.0.0",
+    "cordova-android": "^14.0.1"
+  }
+}

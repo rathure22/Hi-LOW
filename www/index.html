@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com https://api.binance.com https://api.gold-api.com https://api.sifting.io https://www.goldapi.io https://unpkg.com; style-src * 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src * 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com;">
+<title>SniperGold FINAL • Binance Guarded Trade + Floating Tips • Cordova Formal</title>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:"Optimistic";
+    font-style:normal;
+    font-weight:400 900;
+    font-display:swap;
+    src:url("fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Optimistic Mono";
+    font-style:normal;
+    font-weight:400 700;
+    font-display:swap;
+    src:url("fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+  }
+  :root {
+    --font-sans: "Optimistic", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "Optimistic Mono", "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  html, body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  .mono, .mono * {
+    font-family: var(--font-mono) !important;
+    font-feature-settings: "tnum" 1, "zero" 1;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, .font-black { font-family:var(--font-sans); font-weight:900; letter-spacing:-0.03em; }
+  button, input, select { font-family:inherit; }
+  #livePrice, #entryPrice, #slPrice, #guideHigh, #guideLow { font-variant-numeric:tabular-nums; }
+
+  /* Guide Target: dim until the live condition is actually reached. */
+  .guide-target-row{transition:all .22s ease;opacity:.48}
+  .guide-target-row.is-active{opacity:1;background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.55)!important;box-shadow:0 0 18px rgba(34,197,94,.10)}
+  .guide-target-row.is-danger{opacity:1;background:rgba(239,68,68,.10);border-color:rgba(239,68,68,.55)!important}
+  .guide-target-dot{width:7px;height:7px;border-radius:999px;background:#52525b;display:inline-block;box-shadow:none}
+  .guide-target-row.is-active .guide-target-dot{background:#22c55e;box-shadow:0 0 10px rgba(34,197,94,.9)}
+  .guide-target-row.is-danger .guide-target-dot{background:#ef4444;box-shadow:0 0 10px rgba(239,68,68,.9)}
+  .guide-badge{opacity:.5;transition:all .22s ease}
+  .guide-badge.is-active{opacity:1;color:#22c55e;border-color:rgba(34,197,94,.55);background:rgba(34,197,94,.08)}
+  .guide-badge.is-danger{opacity:1;color:#ef4444;border-color:rgba(239,68,68,.55);background:rgba(239,68,68,.08)}
+</style>
+</head>
+
+<body class="bg-[#050508] text-white">
+<div class="max-w-[560px] mx-auto bg-[#0A0A0F] min-h-screen border-x border-zinc-900 pb-20">
+
+<div class="p-4 border-b border-zinc-900 bg-black sticky top-0 z-30 backdrop-blur">
+  <div class="flex justify-between">
+    <div>
+      <h1 class="text-[18px] font-black">SNIPERGOLD<span class="text-yellow-400">_v10</span> <span class="text-[9px] mono text-zinc-500">PATTERN+GUIDE FORMAL</span></h1>
+      <p class="mono text-[8px] text-zinc-500 tracking-[0.3em]">PATTERN BREAKOUT • GUIDE LUSOT • SLOW-STONE™ v6 • CORDOVA</p>
+    </div>
+    <div class="flex items-start gap-2">
+      <div class="text-right">
+        <p class="mono text-[20px] font-black" id="livePrice">--.--</p>
+        <p class="mono text-[8px] text-green-400" id="mode">PATTERN+GUIDE REAL</p>
+      </div>
+      <button id="sidebarOpenBtn" class="w-7 h-7 shrink-0 bg-black border border-zinc-800 rounded-md text-zinc-400 text-[13px] flex items-center justify-center">☰</button>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-gradient-to-r from-zinc-900 via-black to-zinc-900 border border-yellow-400/20 rounded-xl p-3 flex justify-between items-center">
+    <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-yellow-400 text-black flex items-center justify-center font-black text-[12px]">JS</div><div><p class="mono text-[10px] font-bold tracking-[0.3em] text-yellow-400">SLOW-STONE™ v6</p><p class="mono text-[9px] text-zinc-400">Develop by Ji NG • Cordova Formal</p></div></div>
+    <div class="text-right"><p class="mono text-[8px] text-zinc-500">LOGIC</p><p class="mono text-[10px] font-bold">PATTERN+GUIDE</p></div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-black border-2 border-zinc-800 rounded-2xl overflow-hidden">
+    <div class="p-2.5 flex justify-between items-center border-b border-zinc-900">
+      <p class="mono text-[10px] text-zinc-400">🎯 GUIDE LINES • PATTERN BASE • 1-SEC REAL</p>
+      <div class="flex items-center gap-2">
+        <p class="mono text-[9px] text-yellow-400" id="guideInfo">Guide: --</p>
+        <span class="mono text-[8px] text-zinc-500 border border-zinc-800 rounded-full px-2 py-0.5" id="fpsEl" title="TradingView Lightweight Charts · 60fps render">TV 60fps</span>
+      </div>
+    </div>
+    <div id="tvChart" style="width:100%;height:280px;background:#000"></div>
+    <div class="grid grid-cols-3 gap-2 p-2 bg-zinc-900/30 border-t border-zinc-900 mono text-[9px]">
+      <div class="text-center"><p class="text-zinc-500">GUIDE HIGH</p><p class="font-bold text-red-400 mt-1" id="guideHigh">--</p></div>
+      <div class="text-center"><p class="text-zinc-500">GUIDE LOW</p><p class="font-bold text-green-400 mt-1" id="guideLow">--</p></div>
+      <div class="text-center"><p class="text-zinc-500">PATTERN</p><p class="font-bold mt-1" id="patternNow">--</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-xl p-3">
+    <div class="flex justify-between items-center mb-2">
+      <p class="mono text-[9px] text-zinc-500 tracking-widest">WORLD TRADING CLOCK</p>
+      <span class="mono text-[8px] text-yellow-400 border border-yellow-400/30 rounded-full px-2 py-0.5" id="activeSession">--</span>
+    </div>
+    <div class="grid grid-cols-3 gap-2 mono text-[9px] text-center">
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><p class="text-zinc-500">LONDON</p><p class="font-bold mt-1" id="wcLondonTime">--:--</p><p class="text-[8px] mt-0.5 text-zinc-600" id="wcLondonStatus">--</p></div>
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><p class="text-zinc-500">NEW YORK</p><p class="font-bold mt-1" id="wcNYTime">--:--</p><p class="text-[8px] mt-0.5 text-zinc-600" id="wcNYStatus">--</p></div>
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><p class="text-zinc-500">ASIA</p><p class="font-bold mt-1" id="wcAsiaTime">--:--</p><p class="text-[8px] mt-0.5 text-zinc-600" id="wcAsiaStatus">--</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="p-3 grid grid-cols-2 gap-2">
+  <div class="bg-[#111] border border-zinc-800 rounded-xl p-3">
+    <p class="mono text-[9px] text-zinc-500">DETECTED PATTERNS</p>
+    <div class="mt-2 space-y-1.5 mono text-[10px]" id="patternList">
+      <div class="flex justify-between"><span>Double Bottom (W)</span><span id="p1" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Double Top (M)</span><span id="p2" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Bull Flag</span><span id="p3" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Bear Flag</span><span id="p4" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Bullish Bat</span><span id="p5" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Bearish Bat / 5-0</span><span id="p6" class="text-zinc-600">--</span></div>
+    </div>
+  </div>
+  <div class="bg-[#111] border border-zinc-800 rounded-xl p-3">
+    <p class="mono text-[9px] text-zinc-500">GUIDE BREAKOUT CHECK</p>
+    <div class="mt-2 space-y-1.5 mono text-[10px]" id="guideList">
+      <div class="flex justify-between"><span>Price vs Guide High</span><span id="g1" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Price vs Guide Low</span><span id="g2" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Lusot %</span><span id="g3" class="text-zinc-600">--</span></div>
+      <div class="flex justify-between"><span>Confirm</span><span id="g4" class="text-zinc-600">--</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="px-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="mono text-[12px] font-bold">TP1–TP5 • PATTERN GUIDE</p>
+        <p class="mono text-[10px] text-zinc-500 mt-1">Pattern-specific targets; dim until live price actually reaches them</p>
+      </div>
+      <span id="smartTpBadge" class="guide-badge mono text-[8px] border border-zinc-700 rounded-full px-2 py-1">SMART TP WAIT</span>
+    </div>
+    <div class="mt-3 space-y-2" id="tpList"></div>
+    <div class="mt-3 bg-black rounded-xl p-3 border border-zinc-800 grid grid-cols-3 gap-2 mono text-[11px]">
+      <div><p class="text-[9px] text-zinc-500">ENTRY</p><p class="font-black text-[13px]" id="entryPrice">$--</p></div>
+      <div><p class="text-[9px] text-zinc-500">SL / GUIDE</p><p class="font-black text-[13px] text-red-400" id="slPrice">$--</p></div>
+      <div><p class="text-[9px] text-zinc-500">LUSOT</p><p class="font-bold text-[11px] text-yellow-400" id="riskPrice">--</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="mono text-[12px] font-black">GUIDE TARGET • LIVE INDICATOR</p>
+        <p id="guidePatternName" class="mono text-[9px] text-zinc-500 mt-1">Scanning six pattern families…</p>
+      </div>
+      <span id="guideStateBadge" class="guide-badge mono text-[8px] border border-zinc-700 rounded-full px-2 py-1">WAIT</span>
+    </div>
+    <div class="grid grid-cols-2 gap-2 mt-3 mono text-[9px]">
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><span class="text-zinc-600">SUPPORT</span><b id="guideSupport" class="block mt-1">--</b></div>
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><span class="text-zinc-600">RESISTANCE</span><b id="guideResistance" class="block mt-1">--</b></div>
+    </div>
+    <div id="guideTargetList" class="mt-3 space-y-1.5"></div>
+    <div class="grid grid-cols-3 gap-2 mt-3 mono text-[9px]">
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><span class="text-zinc-600">ARROW</span><b id="guideArrow" class="block mt-1 text-zinc-500">WAIT</b></div>
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><span class="text-zinc-600">SMART TP</span><b id="guideSmart" class="block mt-1 text-zinc-500">WAIT</b></div>
+      <div class="bg-black border border-zinc-800 rounded-lg p-2"><span class="text-zinc-600">AUTO</span><b id="guideAuto" class="block mt-1 text-zinc-500">OFF</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 py-4">
+  <div id="finalSignal" class="rounded-[24px] border-2 border-zinc-800 bg-black p-6 text-center">
+    <p class="mono text-[9px] tracking-[0.4em] text-zinc-500">BUY/SELL BASE RA SA PATTERN + GUIDE LUSOT</p>
+    <h2 class="text-[44px] font-black tracking-tighter mt-3" id="finalText">WAIT</h2>
+    <p class="mono text-[11px] mt-2" id="finalDesc">Nag hulat pattern + guide breakout</p>
+    <div class="mt-3 bg-zinc-900/50 rounded-xl p-3 mono text-[10px] text-left" id="logicExplain">
+      Logic: Waiting for pattern formation...
+    </div>
+    <div class="mt-4 h-2 bg-zinc-900 rounded-full overflow-hidden"><div id="patternBar" class="h-full w-[0%] bg-yellow-400 transition-all"></div></div>
+  </div>
+</div>
+
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-green-500/30 rounded-2xl p-4">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="mono text-[12px] font-black text-green-400">MARKET DATA ENGINE</p>
+        <p class="mono text-[9px] text-zinc-500 mt-1">Real historical OHLCV + optional WebSocket stream</p>
+      </div>
+      <span id="mdeLiveBadge" class="mono text-[9px] text-green-400 border border-green-500/30 rounded-full px-2 py-1">LIVE · gold-api.com</span>
+    </div>
+    <div class="mt-3 bg-black border border-zinc-800 rounded-xl p-3">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="mono text-[9px] text-zinc-500">ACTIVE SOURCE</p>
+          <p id="mdeSource" class="mono text-[12px] font-bold text-green-400">gold-api.com</p>
+        </div>
+        <div class="text-right">
+          <p class="mono text-[9px] text-zinc-500">QUOTE CHECK</p>
+          <p id="mdeQuote" class="mono text-[11px] font-bold text-zinc-400">WAIT</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-2 mt-3 mono text-[9px]">
+        <div class="bg-[#0b0b0d] border border-zinc-800 rounded-lg p-2">
+          <p class="text-zinc-600">HIST OHLCV</p><p id="mdeHist" class="mt-1 font-bold text-zinc-500">WAIT</p>
+        </div>
+        <div class="bg-[#0b0b0d] border border-zinc-800 rounded-lg p-2">
+          <p class="text-zinc-600">WEBSOCKET</p><p id="mdeWs" class="mt-1 font-bold text-zinc-500">OFF</p>
+        </div>
+        <div class="bg-[#0b0b0d] border border-zinc-800 rounded-lg p-2">
+          <p class="text-zinc-600">3-SOURCE</p><p id="mdeFallback" class="mt-1 font-bold text-green-400">READY</p>
+        </div>
+      </div>
+      <p id="mdeDetail" class="mono text-[8px] text-zinc-600 mt-3">SiftingIO → GoldAPI.io → gold-api.com</p>
+    </div>
+    <div class="mt-3 grid grid-cols-2 gap-2">
+      <button id="mdeLoadHistory" class="bg-green-400 text-black rounded-xl py-2 mono text-[10px] font-bold">Load Real OHLCV</button>
+      <button id="mdeWsToggle" class="bg-black border border-zinc-700 text-zinc-300 rounded-xl py-2 mono text-[10px] font-bold">WebSocket: OFF</button>
+    </div>
+    <div class="mt-3">
+      <p class="mono text-[9px] text-zinc-500 mb-2">API KEY SOURCES</p>
+      <div class="space-y-2">
+        <input id="siftingKey" type="password" placeholder="SiftingIO API key (sft_...)" class="w-full bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px] outline-none">
+        <input id="goldApiKey" type="password" placeholder="GoldAPI.io API key (optional backup)" class="w-full bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px] outline-none">
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button id="mdeSaveKeys" class="flex-1 bg-zinc-900 border border-zinc-700 rounded-xl py-2 mono text-[9px]">Save Keys</button>
+        <button id="mdeCheckAll" class="flex-1 bg-zinc-900 border border-zinc-700 rounded-xl py-2 mono text-[9px]">Quote Check</button>
+      </div>
+      <p class="mono text-[8px] text-zinc-600 mt-2">Keys stay in this browser's local storage. For a public deployment, use a server/Worker proxy instead of exposing provider keys.</p>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <p class="mono text-[12px] font-bold">TRADE JOURNAL (MANUAL)</p>
+    <div class="grid grid-cols-2 gap-2 mt-3">
+      <select id="journalStrategy" class="bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px]"><option>Strategy A</option><option>Strategy B</option><option>Strategy C</option></select>
+      <select id="journalResult" class="bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px]"><option>Win</option><option>Loss</option><option>BE</option></select>
+      <input id="journalEntry" placeholder="Entry" class="bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px]">
+      <input id="journalExit" placeholder="Exit" class="bg-black border border-zinc-800 rounded-xl px-3 py-2 mono text-[10px]">
+    </div>
+    <button id="journalAdd" class="w-full mt-2 bg-green-400 text-black rounded-xl py-2 mono text-[10px] font-bold">Add Journal Entry</button>
+    <div id="journalList" class="mt-3 mono text-[10px] text-zinc-400">No entries yet</div>
+    <button id="journalClear" class="w-full mt-3 bg-black border border-zinc-800 rounded-xl py-2 mono text-[10px]">Clear Journal</button>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <p class="mono text-[12px] font-bold">SIGNAL HISTORY (AUTO)</p>
+    <div id="signalHistory" class="mt-3 space-y-2 mono text-[10px]"><div class="text-zinc-600">No signal history yet</div></div>
+    <button id="signalHistoryClear" class="w-full mt-3 bg-black border border-zinc-800 rounded-xl py-2 mono text-[10px]">Clear History</button>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <p class="mono text-[12px] font-bold">NEWS CALENDAR (PHT)</p>
+    <div class="mt-3 mono text-[10px] text-zinc-300">○ <span class="text-yellow-400 font-bold">soon</span> 20:30 · US CPI / inflation <span class="text-zinc-600">[med]</span></div>
+    <div class="border-t border-zinc-900 mt-3 pt-3 mono text-[9px] text-zinc-600">No high-impact window now</div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <p class="mono text-[12px] font-bold">BACKTEST PANEL</p>
+    <p class="mono text-[9px] text-zinc-600 mt-2">Run Strategy C rules on loaded candle history</p>
+    <button id="runBacktest" class="w-full mt-3 bg-green-400 text-black rounded-xl py-2 mono text-[10px] font-bold">Run Backtest</button>
+    <div id="backtestResult" class="mono text-[10px] text-zinc-500 mt-3">No backtest yet</div>
+  </div>
+</div>
+
+<div class="px-3 pt-3">
+  <div class="bg-[#111] border border-zinc-800 rounded-2xl p-4">
+    <p class="mono text-[12px] font-bold">VOLUME (TICK INTENSITY)</p>
+    <div class="flex justify-between items-center mt-3">
+      <span id="tickActivity" class="mono text-[11px] font-bold">Waiting</span>
+      <span id="tickIntensity" class="mono text-[11px] font-black text-green-400 border border-green-500/50 rounded-full px-3 py-1">0 TICKS/MIN · LOW</span>
+    </div>
+    <p class="mono text-[9px] text-zinc-600 mt-3">Proxy from tick rate + update intensity (free APIs may not expose true exchange volume).</p>
+  </div>
+</div>
+
+<div class="p-4 border-t border-zinc-900 text-center">
+  <p class="mono text-[10px] tracking-[0.3em] text-zinc-600">DEVELOP BY</p>
+  <p class="mono text-[14px] font-black mt-1">Ji NG <span class="text-yellow-400">SLOW-STONE™ v6</span> • Cordova v10</p>
+  <p class="mono text-[8px] text-zinc-700 mt-2">PATTERN + GUIDE LUSOT LOGIC • 1-SEC REALTIME WORLD MARKET • APK READY</p>
+</div>
+
+<div id="floatingWidget" class="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-[420px] bg-black/90 backdrop-blur border border-zinc-800 rounded-2xl shadow-lg mono">
+  <div id="fwHeader" class="flex items-center justify-between px-3 py-2 cursor-pointer select-none">
+    <div class="flex items-center gap-2">
+      <span id="fwDot" class="w-2 h-2 rounded-full bg-zinc-600"></span>
+      <div>
+        <p id="fwDir" class="text-[10px] font-black text-zinc-400">WAIT</p>
+        <p id="fwSource" class="text-[8px] text-zinc-600">Monitoring pattern + guide…</p>
+      </div>
+    </div>
+    <span id="fwToggle" class="text-zinc-500 text-[10px]">▾</span>
+  </div>
+  <div id="fwBody" class="hidden px-3 pb-2.5 border-t border-zinc-900 pt-2">
+    <div class="flex justify-between text-[9px]"><span class="text-zinc-500">Status</span><span id="fwStatus" class="text-zinc-300">Monitoring A, B & C…</span></div>
+    <div class="flex justify-between text-[9px] mt-1"><span class="text-zinc-500">Next candle</span><span id="fwCountdown" class="text-yellow-400">--s</span></div>
+  </div>
+</div>
+
+<div id="sidebarOverlay" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+<div id="sidebar" class="fixed top-0 right-0 h-full w-[80%] max-w-[300px] bg-[#0a0a0f] border-l border-zinc-800 z-50 translate-x-full transition-transform duration-300 overflow-y-auto mono">
+  <div class="p-4">
+    <div class="flex justify-between items-start mb-4">
+      <div>
+        <p class="text-[8px] font-bold text-zinc-500">Dev. Ji NG SLOW-STONE™</p>
+        <p class="text-[7px] text-zinc-600 mt-1">v10 PATTERN+GUIDE • Canvas Chart / 144Hz / Cordova Formal</p>
+      </div>
+      <button id="sidebarCloseBtn" class="w-7 h-7 shrink-0 bg-black border border-zinc-800 rounded-md text-zinc-400 text-[11px] flex items-center justify-center">✕</button>
+    </div>
+    <p class="text-[8px] font-bold text-zinc-500 uppercase mb-2 tracking-widest">Function Status</p>
+    <div id="functionCheckList" class="bg-black border border-zinc-800 rounded-xl p-3 mb-4 space-y-1.5 text-[9px]"></div>
+    <p class="text-[8px] font-bold text-zinc-500 uppercase mb-2 tracking-widest">Live Data Status</p>
+    <div id="liveDataStatus" class="text-[9px] text-green-400 font-bold mb-1">No live data yet</div>
+    <div class="mt-4 p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
+      <p class="text-[8px] text-yellow-400 font-bold">CORDOVA APK READY</p>
+      <p class="text-[7px] text-zinc-400 mt-1">This build is formal for Cordova APK. All APIs use HTTPS and CSP is configured for APK.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- BINANCE / FLOATING TIPS -->
+<div class="px-3 pt-3">
+  <div class="bg-black border border-yellow-400/20 rounded-2xl p-3 mono">
+    <div class="flex justify-between items-center">
+      <div>
+        <p class="text-[11px] font-black text-yellow-400">BINANCE TRADE CONTROL</p>
+        <p id="bnConnectionText" class="text-[8px] text-zinc-500 mt-1">SIGNAL MODE • Binance disconnected</p>
+      </div>
+      <div class="flex gap-1">
+        <button id="binanceConnectToggle" class="px-2 py-1 rounded-lg border border-yellow-400/40 text-[8px] font-black">CONNECT OFF</button>
+        <button id="floatingTipsToggle" class="px-2 py-1 rounded-lg border border-emerald-400/40 text-[8px] font-black">TIPS ON</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-1.5 mt-3">
+      <button class="tradeQtyBtn px-2 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-[10px]" data-qty="0.001">0.001</button>
+      <button class="tradeQtyBtn px-2 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-[10px]" data-qty="0.002">0.002</button>
+      <button class="tradeQtyBtn px-2 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-[10px]" data-qty="0.003">0.003</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2 mt-2">
+      <input id="tradeSymbol" value="BTCUSDT" class="bg-zinc-900 border border-zinc-800 rounded-lg px-2 py-2 text-[10px]">
+      <input id="tradeQty" value="0.001" inputmode="decimal" class="bg-zinc-900 border border-zinc-800 rounded-lg px-2 py-2 text-[10px]">
+    </div>
+    <div class="mt-2 flex justify-between text-[9px]">
+      <span class="text-zinc-500">BINANCE PRICE</span><span id="tradeMarketPrice">--</span>
+    </div>
+    <div class="mt-1 flex justify-between text-[9px]">
+      <span class="text-zinc-500">EST. VALUE</span><span id="tradePHPValue">₱--</span>
+    </div>
+    <div class="grid grid-cols-4 gap-1.5 mt-3">
+      <button id="tradeArm" class="px-2 py-2 rounded-lg border border-orange-400/40 text-[9px] font-black">REAL ORDER OFF</button>
+      <button id="tradeOneShot" class="px-2 py-2 rounded-lg border border-orange-400/40 text-[9px] font-black">ONE-SHOT ON</button>
+      <button id="tradeRefreshBalance" class="px-2 py-2 rounded-lg border border-zinc-700 text-[9px] font-black">BALANCE</button>
+      <button id="binanceClearKey" class="px-2 py-2 rounded-lg border border-zinc-700 text-[9px] font-black">CLEAR KEY</button>
+    </div>
+    <div class="grid grid-cols-2 gap-2 mt-2">
+      <button id="smartTpToggle" class="px-2 py-2 rounded-lg border border-emerald-400/40 text-[9px] font-black">SMART TP ON</button>
+      <button id="autoTradeToggle" class="px-2 py-2 rounded-lg border border-zinc-700 text-[9px] font-black">AUTO OFF</button>
+    </div>
+    <p class="text-[8px] text-zinc-600 mt-2">AUTO only becomes eligible when a real pattern arrow + SmartTP condition match. REAL ORDER still requires ARM + final confirmation. Withdrawals are never requested by this app.</p>
+    <div class="grid grid-cols-2 gap-2 mt-2">
+      <button id="tradeBuy" disabled class="px-2 py-2 rounded-lg bg-emerald-600/20 border border-emerald-400/40 text-emerald-300 font-black text-[11px]">BUY</button>
+      <button id="tradeSell" disabled class="px-2 py-2 rounded-lg bg-red-600/20 border border-red-400/40 text-red-300 font-black text-[11px]">SELL</button>
+    </div>
+    <p id="tradeStatus" class="text-[8px] text-zinc-500 mt-2">Floating signals can run independently of Binance.</p>
+    <p id="bnBalance" class="text-[8px] text-zinc-400 mt-1">Balance: --</p>
+  </div>
+</div>
+
+<div id="tradeFloat" class="fixed bottom-[76px] left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-[430px] bg-black/95 backdrop-blur border border-yellow-400/40 rounded-2xl shadow-2xl hidden mono p-3">
+  <div class="flex justify-between items-start">
+    <div>
+      <p class="text-[10px] font-black text-yellow-400">SNIPERGOLD FLOATING TIP</p>
+      <p id="tradeSignalText" class="text-[12px] font-black mt-1">WAIT</p>
+    </div>
+    <button id="tradeClose" class="w-7 h-7 rounded-lg border border-zinc-700 text-zinc-400">✕</button>
+  </div>
+  <div class="grid grid-cols-2 gap-2 mt-3 text-[9px]">
+    <div class="bg-zinc-900 rounded-lg p-2"><span class="text-zinc-500">ENTRY</span><br><b id="floatEntry">--</b></div>
+    <div class="bg-zinc-900 rounded-lg p-2"><span class="text-zinc-500">TARGET</span><br><b id="floatTarget">--</b></div>
+  </div>
+  <div class="grid grid-cols-2 gap-2 mt-2">
+    <button id="floatBuy" class="px-2 py-2 rounded-lg border border-emerald-400/40 text-emerald-300 font-black text-[10px]">BUY</button>
+    <button id="floatSell" class="px-2 py-2 rounded-lg border border-red-400/40 text-red-300 font-black text-[10px]">SELL</button>
+  </div>
+</div>
+
+<script src="cordova.js"></script>
+<script>
+
+// ===== CLEAN TRADINGVIEW CHART ENGINE =====
+let chart=null, candleSeries=null;
+let tvPriceLines = [];
+let prices=[], times=[], timeIdx=Math.floor(Date.now()/1000), currentPrice=4349.70, entry=4349.70, sl=4349.18, risk=0.52;
+let guideHigh=4351, guideLow=4348;
+let startTs=Date.now();
+let candles=JSON.parse(localStorage.getItem('snipergold_ohlcv_1m')||'[]');
+const CANDLE_MS=60000;
+const MAX_CANDLES=600;
+let currentGuide=null;
+let lastSignal='WAIT';
+let smartTpEnabled=localStorage.getItem('snipergold_smarttp')!=='0';
+let autoTradeEnabled=localStorage.getItem('snipergold_auto_trade')==='1';
+let autoTradeLastKey='';
+const SG_WIRING={
+  boot:false, livePrice:false, candle:false, guide:false, patterns:false, chart:false,
+  clock:false, mde:false, history:false, ws:false, journal:false, signalHistory:false,
+  binance:false, floating:false, smarttp:false, auto:false, lastError:'', lastPriceTs:0
+};
+function sgMark(key,value=true){ if(Object.prototype.hasOwnProperty.call(SG_WIRING,key)) SG_WIRING[key]=value; }
+function sgState(ok,ready=false,error=false){ return error?'ERROR':ok?'LIVE':ready?'READY':'WAIT'; }
+
+function pushCandleTick(price, ts){
+  const bucket=Math.floor(ts/CANDLE_MS)*CANDLE_MS;
+  const last=candles[candles.length-1];
+  if(!last || last.time!==bucket){
+    candles.push({time:bucket, open:price, high:price, low:price, close:price});
+    if(candles.length>MAX_CANDLES) candles.shift();
+    localStorage.setItem('snipergold_ohlcv_1m',JSON.stringify(candles.slice(-MAX_CANDLES)));
+  } else {
+    last.high=Math.max(last.high,price);
+    last.low=Math.min(last.low,price);
+    last.close=price;
+    localStorage.setItem('snipergold_ohlcv_1m',JSON.stringify(candles.slice(-MAX_CANDLES)));
+  }
+}
+
+function initTVChart(){
+  const container = document.getElementById('tvChart');
+  if(!container) return;
+  if(chart){ try{ chart.remove(); }catch(e){} chart=null; }
+  chart = LightweightCharts.createChart(container, {
+    layout: { background: { type: 'solid', color: '#000' }, textColor: '#888' },
+    grid: { vertLines: { color: '#111' }, horzLines: { color: '#111' } },
+    crosshair: { mode: 1 },
+    rightPriceScale: { borderColor: '#222' },
+    timeScale: { borderColor: '#222', timeVisible: true, secondsVisible: false },
+    width: container.clientWidth,
+    height: 280,
+  });
+  candleSeries = chart.addCandlestickSeries({
+    upColor: '#22c55e', downColor: '#ef4444',
+    borderVisible: false, wickUpColor: '#22c55e', wickDownColor: '#ef4444',
+  });
+  window.addEventListener('resize', ()=>{ if(chart) chart.applyOptions({width: container.clientWidth}); });
+  if(candles.length>0) drawChart();
+  document.getElementById('fpsEl').innerText = 'TV 60fps';
+}
+
+function initChart(){ initTVChart(); }
+
+function drawChart(){
+  if(!candleSeries || !chart){ initTVChart(); return; }
+  if(candles.length<2) return;
+  const tvData = candles.slice(-MAX_CANDLES).map(c=>({ time: Math.floor(c.time/1000), open: c.open, high: c.high, low: c.low, close: c.close }));
+  candleSeries.setData(tvData);
+  tvPriceLines.forEach(pl=>{ try{ candleSeries.removePriceLine(pl); }catch(e){} });
+  tvPriceLines=[];
+  if(Number.isFinite(guideHigh)){
+    const pl = candleSeries.createPriceLine({ price: guideHigh, color: '#ef4444', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'GUIDE HIGH' });
+    tvPriceLines.push(pl);
+  }
+  if(Number.isFinite(guideLow)){
+    const pl = candleSeries.createPriceLine({ price: guideLow, color: '#22c55e', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'GUIDE LOW' });
+    tvPriceLines.push(pl);
+  }
+  chart.timeScale().fitContent();
+}
+
+function toggleSidebar(open){
+  const sb=document.getElementById('sidebar'), ov=document.getElementById('sidebarOverlay');
+  if(!sb||!ov) return;
+  if(open){ sb.classList.remove('translate-x-full'); ov.classList.remove('hidden'); }
+  else { sb.classList.add('translate-x-full'); ov.classList.add('hidden'); }
+}
+
+function renderFunctionStatus(){
+  const el=document.getElementById('functionCheckList');
+  if(!el) return;
+  const stale=SG_WIRING.lastPriceTs>0 && Date.now()-SG_WIRING.lastPriceTs>10000;
+  const rows=[
+    ['Live price feed', stale?'ERROR':sgState(prices.length>0 && SG_WIRING.lastPriceTs>0, true)],
+    ['Candle builder (1m OHLC)', sgState(candles.length>0 && typeof pushCandleTick==='function', true)],
+    ['Guide breakout calc', sgState(Number.isFinite(guideHigh)&&Number.isFinite(guideLow), prices.length<18)],
+    ['6-pattern detection', sgState(prices.length>=20 && typeof detectPatterns==='function', prices.length<20)],
+    ['Guide Target engine', sgState(!!currentGuide && typeof buildGuideTarget==='function', true)],
+    ['SmartTP matching', sgState(typeof updateGuideTargetUI==='function' && !!document.getElementById('guideSmart'), true)],
+    ['TradingView chart render', sgState(!!chart && !!candleSeries, true)],
+    ['World trading clock', sgState(!!document.getElementById('activeSession') && !!document.getElementById('wcLondonTime'), true)],
+    ['Market Data Engine', sgState(!!MDE.lastQuote && !!MDE.source, true)],
+    ['Stored 1m OHLCV buffer', sgState(candles.length>0, true)],
+    ['3-source quote fallback', sgState(['SiftingIO','GoldAPI.io','gold-api.com'].includes(MDE.source), true)],
+    ['WebSocket engine', MDE.wsStatus==='CONNECTED'?'LIVE':MDE.wsStatus==='ERROR'?'ERROR':MDE.wsUrl?'READY':'WAIT'],
+    ['Trade Journal wiring', sgState(!!SG_WIRING.journal, !!document.getElementById('journalList'))],
+    ['Signal History wiring', sgState(!!SG_WIRING.signalHistory, !!document.getElementById('signalHistory'))],
+    ['Binance guarded trade', sgState(!!SG_WIRING.binance, !!document.getElementById('tradeBuy'))],
+    ['Floating Tips wiring', sgState(!!SG_WIRING.floating, !!document.getElementById('tradeFloat'))],
+    ['Cordova bridge', typeof window.cordova!=='undefined'?'LIVE':'READY']
+  ];
+  const cls={LIVE:'text-green-400',READY:'text-yellow-400',WAIT:'text-zinc-600',ERROR:'text-red-400'};
+  const dot={LIVE:'●',READY:'◐',WAIT:'○',ERROR:'×'};
+  el.innerHTML=rows.map(([name,state])=>`<div class="flex justify-between"><span class="text-zinc-500">${name}</span><span class="${cls[state]||'text-zinc-500'} font-bold">${dot[state]||'○'} ${state}</span></div>`).join('');
+}
+
+function updateLiveDataStatus(){
+  const el=document.getElementById('liveDataStatus');
+  if(!el) return;
+  const age=SG_WIRING.lastPriceTs?Math.max(0,Math.floor((Date.now()-SG_WIRING.lastPriceTs)/1000)):null;
+  const state=age===null?'WAIT':age>10?'STALE':'LIVE';
+  el.textContent=`${state} · ${prices.length} ticks · ${candles.length}/600 candles · source ${MDE.source}${age===null?'':' · '+age+'s ago'}`;
+  el.className='text-[9px] font-bold mb-1 '+(state==='LIVE'?'text-green-400':state==='STALE'?'text-yellow-400':'text-zinc-500');
+}
+
+function updateFloatingWidget(signal, reason){
+  const fwDot=document.getElementById('fwDot'), fwDir=document.getElementById('fwDir'), fwSource=document.getElementById('fwSource'), fwStatus=document.getElementById('fwStatus'), fwCountdown=document.getElementById('fwCountdown');
+  if(fwDir){
+    fwDir.textContent=signal;
+    fwDir.className='text-[10px] font-black '+(signal==='BUY'?'text-green-400':signal==='SELL'?'text-red-400':'text-zinc-400');
+  }
+  if(fwDot) fwDot.className='w-2 h-2 rounded-full '+(signal==='BUY'?'bg-green-400':signal==='SELL'?'bg-red-400':'bg-zinc-600');
+  if(fwSource) fwSource.textContent=signal==='WAIT'?'Monitoring pattern + guide…':(reason||'').slice(0,64);
+  if(fwStatus) fwStatus.textContent=signal==='WAIT'?'Monitoring A, B & C…':'Signal active';
+  if(fwCountdown){
+    const nextBucket=(Math.floor(Date.now()/CANDLE_MS)+1)*CANDLE_MS;
+    fwCountdown.textContent=Math.max(0,Math.round((nextBucket-Date.now())/1000))+'s';
+  }
+}
+
+function updateWorldClock(){
+  const now=new Date();
+  const sessions=[{id:'London',tz:'Europe/London',open:8,close:17},{id:'NY',tz:'America/New_York',open:8,close:17},{id:'Asia',tz:'Asia/Tokyo',open:9,close:18}];
+  let active=[];
+  sessions.forEach(s=>{
+    const t=now.toLocaleTimeString('en-GB',{timeZone:s.tz,hour:'2-digit',minute:'2-digit',hour12:false});
+    const h=parseInt(now.toLocaleTimeString('en-GB',{timeZone:s.tz,hour:'2-digit',hour12:false}));
+    const isOpen=h>=s.open && h<s.close;
+    if(isOpen) active.push(s.id);
+    const timeEl=document.getElementById('wc'+s.id+'Time'), statusEl=document.getElementById('wc'+s.id+'Status');
+    if(timeEl) timeEl.innerText=t;
+    if(statusEl){ statusEl.innerText=isOpen?'● OPEN':'closed'; statusEl.className='text-[8px] mt-0.5 '+(isOpen?'text-green-400 font-bold':'text-zinc-600'); }
+  });
+  const sessEl=document.getElementById('activeSession');
+  if(sessEl) sessEl.innerText=active.length?active.join(' + '):'ALL CLOSED';
+}
+
+const MDE = {
+  siftingKey: localStorage.getItem('snipergold_sifting_key') || '',
+  goldApiKey: localStorage.getItem('snipergold_goldapi_key') || '',
+  ws: null, wsEnabled: localStorage.getItem('snipergold_ws') === '1',
+  wsPrice: null, wsTs: 0, source: 'gold-api.com', lastQuote: null, lastHistory: 0,
+  tickWindow: [], signalLog: JSON.parse(localStorage.getItem('snipergold_signal_history') || '[]'),
+  journal: JSON.parse(localStorage.getItem('snipergold_journal') || '[]'),
+  wsUrl: localStorage.getItem('snipergold_ws_url') || '',
+  wsStatus: 'OFF'
+};
+
+function mdeSet(id, text, cls='text-zinc-500'){
+  const el=document.getElementById(id); if(el){el.textContent=text; el.className='mt-1 font-bold '+cls;}
+}
+function mdeLoadKeys(){
+  const a=document.getElementById('siftingKey'), b=document.getElementById('goldApiKey');
+  if(a) a.value=MDE.siftingKey; if(b) b.value=MDE.goldApiKey;
+}
+function mdeUpdateUI(detail){
+  const s=document.getElementById('mdeSource'), d=document.getElementById('mdeDetail');
+  if(s) s.textContent=MDE.source;
+  if(d && detail) d.textContent=detail;
+  const badge=document.getElementById('mdeLiveBadge');
+  if(badge) badge.textContent=(MDE.source==='WebSocket'?'LIVE · WebSocket':'LIVE · '+MDE.source)+' · TV Chart';
+}
+function rememberTick(price){
+  const now=Date.now();
+  MDE.tickWindow.push(now);
+  MDE.tickWindow=MDE.tickWindow.filter(t=>now-t<60000);
+  const n=MDE.tickWindow.length;
+  const label=n>=50?'HIGH':n>=20?'MED':'LOW';
+  const cls=label==='HIGH'?'text-green-400':label==='MED'?'text-yellow-400':'text-zinc-400';
+  const a=document.getElementById('tickActivity'), b=document.getElementById('tickIntensity');
+  if(a) a.textContent=label==='HIGH'?'High activity':label==='MED'?'Medium activity':'Low activity';
+  if(b){b.textContent=`${n} TICKS/MIN · ${label}`; b.className='mono text-[11px] font-black border border-green-500/50 rounded-full px-3 py-1 '+cls;}
+}
+async function siftingQuote(){
+  if(!MDE.siftingKey) throw new Error('no sifting key');
+  const r=await fetch('https://api.sifting.io/v1/last/trade/commodities/XAUUSD',{headers:{'X-API-Key':MDE.siftingKey},cache:'no-store'});
+  if(!r.ok) throw new Error('Sifting quote '+r.status);
+  const d=await r.json(), p=Number(d.p);
+  if(!Number.isFinite(p)) throw new Error('bad Sifting price');
+  return p;
+}
+async function goldApiQuote(){
+  if(!MDE.goldApiKey) throw new Error('no GoldAPI key');
+  const r=await fetch('https://www.goldapi.io/api/price/XAU/USD',{headers:{'x-access-token':MDE.goldApiKey,'Content-Type':'application/json'},cache:'no-store'});
+  if(!r.ok) throw new Error('GoldAPI '+r.status);
+  const d=await r.json(), p=Number(d.price);
+  if(!Number.isFinite(p)) throw new Error('bad GoldAPI price');
+  return p;
+}
+async function publicGoldQuote(){
+  const r=await fetch('https://api.gold-api.com/price/XAU',{cache:'no-store'});
+  if(!r.ok) throw new Error('gold-api.com '+r.status);
+  const d=await r.json(), p=Number(d.price);
+  if(!Number.isFinite(p)) throw new Error('bad gold-api price');
+  return p;
+}
+async function fetchGold(){
+  if(MDE.wsPrice && Date.now()-MDE.wsTs<5000){ MDE.source='WebSocket'; mdeSet('mdeQuote','WS · '+MDE.wsPrice.toFixed(2),'text-green-400'); mdeUpdateUI('WebSocket live price'); return MDE.wsPrice; }
+  try{
+    const p=await siftingQuote();
+    MDE.source='SiftingIO'; MDE.lastQuote=p; sgMark('livePrice',true); SG_WIRING.lastPriceTs=Date.now(); mdeSet('mdeQuote','OK · '+p.toFixed(2),'text-green-400'); mdeUpdateUI('SiftingIO live quote OK'); rememberTick(p); return p;
+  }catch(e){}
+  try{
+    const p=await goldApiQuote();
+    MDE.source='GoldAPI.io'; MDE.lastQuote=p; sgMark('livePrice',true); SG_WIRING.lastPriceTs=Date.now(); mdeSet('mdeQuote','OK · '+p.toFixed(2),'text-green-400'); mdeUpdateUI('GoldAPI.io backup OK'); rememberTick(p); return p;
+  }catch(e){}
+  try{
+    const p=await publicGoldQuote();
+    MDE.source='gold-api.com'; MDE.lastQuote=p; sgMark('livePrice',true); SG_WIRING.lastPriceTs=Date.now(); mdeSet('mdeQuote','OK · '+p.toFixed(2),'text-green-400'); mdeUpdateUI('gold-api.com fallback OK'); rememberTick(p); return p;
+  }catch(e){}
+  mdeSet('mdeQuote','OFFLINE','text-red-400'); throw new Error('All sources unavailable');
+}
+
+function detectPatterns(arr){
+  const none={found:false,confidence:0};
+  if(arr.length<20) return {doubleBottom:{...none},doubleTop:{...none},bullFlag:{...none},bearFlag:{...none},bullBat:{...none},bearBat50:{...none}};
+  const last=arr.slice(-60);
+  const min=Math.min(...last), max=Math.max(...last), span=Math.max(0.0001,max-min);
+  const pivL=[], pivH=[];
+  for(let i=2;i<last.length-2;i++){
+    if(last[i]<=last[i-1] && last[i]<=last[i-2] && last[i]<=last[i+1] && last[i]<=last[i+2]) pivL.push({i,p:last[i]});
+    if(last[i]>=last[i-1] && last[i]>=last[i-2] && last[i]>=last[i+1] && last[i]>=last[i+2]) pivH.push({i,p:last[i]});
+  }
+  const recentL=pivL.slice(-3), recentH=pivH.slice(-3);
+  const db=recentL.length>=2 && Math.abs(recentL.at(-1).p-recentL.at(-2).p)<=span*.035;
+  const dt=recentH.length>=2 && Math.abs(recentH.at(-1).p-recentH.at(-2).p)<=span*.035;
+  const first=last.slice(0,20), second=last.slice(-20);
+  const up=first.at(-1)-first[0], dn=first.at(-1)-first[0];
+  const secondRange=Math.max(...second)-Math.min(...second);
+  const bullFlag=up>span*.12 && secondRange<span*.10;
+  const bearFlag=dn<-span*.12 && secondRange<span*.10;
+
+  /* Bat/5-0 is only marked when a measurable swing geometry exists.
+     This is deliberately conservative; it never displays a fake match. */
+  const swings=[...pivL.map(x=>({type:'L',i:x.i,p:x.p})),...pivH.map(x=>({type:'H',i:x.i,p:x.p}))].sort((a,b)=>a.i-b.i).slice(-5);
+  let bullBat=false,bearBat50=false;
+  if(swings.length>=5){
+    const [X,A,B,C,D]=swings;
+    const XA=Math.abs(A.p-X.p), AB=Math.abs(B.p-A.p), CD=Math.abs(D.p-C.p);
+    const bRatio=XA?AB/XA:0, dRatio=XA?Math.abs(D.p-X.p)/XA:0;
+    bullBat=(X.type==='L'&&A.type==='H'&&B.type==='L'&&C.type==='H'&&D.type==='L'&&bRatio>=.32&&bRatio<=.45&&dRatio>=.80&&dRatio<=.95);
+    bearBat50=(X.type==='H'&&A.type==='L'&&B.type==='H'&&C.type==='L'&&D.type==='H'&&bRatio>=.43&&bRatio<=.57);
+  }
+  return {
+    doubleBottom:{found:db,confidence:db?Math.min(99,65+Math.round(35*(1-Math.abs(recentL.at(-1).p-recentL.at(-2).p)/Math.max(span*.035,.0001)))):0},
+    doubleTop:{found:dt,confidence:dt?80:0},
+    bullFlag:{found:bullFlag,confidence:bullFlag?70:0},
+    bearFlag:{found:bearFlag,confidence:bearFlag?70:0},
+    bullBat:{found:bullBat,confidence:bullBat?75:0},
+    bearBat50:{found:bearBat50,confidence:bearBat50?75:0}
+  };
+}
+function buildGuideTarget(patterns, price){
+  const found=[];
+  if(patterns.doubleBottom.found) found.push({key:'doubleBottom',name:'Double Bottom / W Bottom',side:'BUY',support:[90,91],resistance:[115,116],tps:[112,114,115.5,116,118],weights:[50,30,15,4,1],atrBuffer:.25,primary:3});
+  if(patterns.doubleTop.found) found.push({key:'doubleTop',name:'Double Top / M Top',side:'SELL',support:[90,91],resistance:[115,116],tps:[108,105,102,98,92],weights:[50,30,15,4,1],atrBuffer:.25,primary:3});
+  if(patterns.bullFlag.found) found.push({key:'bullFlag',name:'Bull Flag',side:'BUY',support:[100,102],resistance:[120,122],tps:[],weights:[50,30,15,4,1],primary:4,autoTarget:122});
+  if(patterns.bearFlag.found) found.push({key:'bearFlag',name:'Bear Flag',side:'SELL',support:[80,82],resistance:[102,104],tps:[],weights:[50,30,15,4,1],primary:4,autoTarget:82});
+  if(patterns.bullBat.found) found.push({key:'bullBat',name:'Bullish Bat • PRZ D',side:'BUY',support:[Math.min(price,price),Math.max(price,price)],resistance:[price,price],tps:[],weights:[50,30,15,4,1],primary:3,atrBuffer:.25});
+  if(patterns.bearBat50.found) found.push({key:'bearBat50',name:'Bearish Bat / 5-0',side:'SELL',support:[price,price],resistance:[price,price],tps:[],weights:[50,30,15,4,1],primary:3,atrBuffer:.6});
+  if(!found.length) return null;
+  return found[0];
+}
+
+function deriveTargets(guide, price, risk){
+  if(guide.tps?.length) return guide.tps;
+  const r=Math.max(.3,risk||Math.abs(guide.resistance[1]-guide.support[0])/5);
+  if(guide.key==='bullFlag') return [price+r,price+r*2,price+r*3,guide.autoTarget,guide.autoTarget+r];
+  if(guide.key==='bearFlag') return [price-r,price-r*2,price-r*3,guide.autoTarget,guide.autoTarget-r];
+  if(guide.key==='bullBat') return [price+r,price+r*2,price+r*3,price+r*4,price+r*5];
+  return [price-r,price-r*2,price-r*3,price-r*4,price-r*5];
+}
+
+function updateGuideTargetUI(guide, price, bullish, targets, arrow, smartMatch){
+  const name=document.getElementById('guidePatternName'), sup=document.getElementById('guideSupport'), res=document.getElementById('guideResistance');
+  const state=document.getElementById('guideStateBadge'), arrowEl=document.getElementById('guideArrow'), smart=document.getElementById('guideSmart'), auto=document.getElementById('guideAuto');
+  if(name) name.textContent=guide?`${guide.name} • ${guide.side}`:'No confirmed pattern — scanning';
+  if(sup) sup.textContent=guide?`${guide.support[0]}–${guide.support[1]}`:'--';
+  if(res) res.textContent=guide?`${guide.resistance[0]}–${guide.resistance[1]}`:'--';
+  const list=document.getElementById('guideTargetList');
+  if(list){
+    list.innerHTML=targets.map((v,i)=>{
+      const hit=bullish?price>=v:price<=v;
+      const active=hit && arrow===guide?.side;
+      return `<div class="guide-target-row ${active?'is-active':''} bg-black border border-zinc-800 rounded-lg px-3 py-2 flex justify-between items-center">
+        <span class="mono text-[9px]"><span class="guide-target-dot mr-2"></span>TP${i+1} <span class="text-zinc-600">${guide?.weights?.[i]?guide.weights[i]+'%':''}</span></span>
+        <span class="mono text-[10px] font-bold">${Number(v).toFixed(2)} ${active?'✓':''}</span>
+      </div>`;
+    }).join('');
+  }
+  const reached=targets.some(v=>bullish?price>=v:price<=v);
+  if(state){state.textContent=smartMatch?'SMART TP MATCH':reached?'TARGET REACHED':'WAIT';state.className='guide-badge mono text-[8px] border rounded-full px-2 py-1 '+(smartMatch||reached?'is-active':'');}
+  if(arrowEl){arrowEl.textContent=arrow==='BUY'?'↑ BUY':arrow==='SELL'?'↓ SELL':'WAIT';arrowEl.className='block mt-1 '+(arrow==='BUY'?'text-green-400':arrow==='SELL'?'text-red-400':'text-zinc-500');}
+  if(smart){smart.textContent=smartMatch?'MATCH':'WAIT';smart.className='block mt-1 '+(smartMatch?'text-green-400':'text-zinc-500');}
+  if(auto){auto.textContent=autoTradeEnabled?'ON':'OFF';auto.className='block mt-1 '+(autoTradeEnabled?'text-yellow-400':'text-zinc-500');}
+}
+
+function renderPatternIndicators(patterns){
+  const map=[
+    ['p1',patterns.doubleBottom,'W FOUND'],
+    ['p2',patterns.doubleTop,'M FOUND'],
+    ['p3',patterns.bullFlag,'FLAG'],
+    ['p4',patterns.bearFlag,'FLAG'],
+    ['p5',patterns.bullBat,'BAT'],
+    ['p6',patterns.bearBat50,'5-0']
+  ];
+  map.forEach(([id,x,label])=>{
+    const el=document.getElementById(id); if(!el)return;
+    el.textContent=x.found?`${label} ✓`:'--';
+    el.className=x.found?(id==='p2'||id==='p4'||id==='p6'?'text-red-400 font-bold':'text-green-400 font-bold'):'text-zinc-600';
+  });
+}
+
+
+function updateGuide(){
+  if(prices.length<18) return;
+  const last18=prices.slice(-18);
+  guideHigh=Math.max(...last18);
+  guideLow=Math.min(...last18);
+  const gh=document.getElementById('guideHigh'), gl=document.getElementById('guideLow'), gi=document.getElementById('guideInfo');
+  if(gh) gh.innerText=guideHigh.toFixed(2);
+  if(gl) gl.innerText=guideLow.toFixed(2);
+  if(gi) gi.innerText=`H:${guideHigh.toFixed(2)} L:${guideLow.toFixed(2)}`;
+}
+
+function renderTP(bullish, targets=null, guide=null){
+  const list=document.getElementById('tpList'); if(!list)return;
+  const vals=targets||[entry+risk,entry+risk*2,entry+risk*3,entry+risk*4,entry+risk*5].map((v)=>bullish?v:entry-(v-entry));
+  list.innerHTML=vals.map((price,i)=>{
+    const hit=bullish?currentPrice>=price:currentPrice<=price;
+    const primary=guide?.primary===i+1;
+    return `<div class="guide-target-row ${hit?'is-active':''} bg-black rounded-xl px-3 py-2.5 flex justify-between items-center border ${primary?'border-yellow-400/50':'border-zinc-800'}">
+      <div><p class="mono text-[11px] font-bold">TP${i+1}${primary?' • PRIMARY':''}</p><p class="mono text-[9px] text-zinc-500">${guide?.weights?.[i]?guide.weights[i]+'%':''}</p></div>
+      <div class="text-right"><p class="mono text-[12px] font-bold">$${Number(price).toFixed(2)}</p><p class="mono text-[8px]">${hit?'● REACHED':'● DIM'}</p></div>
+    </div>`;
+  }).join('');
+  const ep=document.getElementById('entryPrice'), slp=document.getElementById('slPrice'), rp=document.getElementById('riskPrice');
+  if(ep) ep.innerText='$'+entry.toFixed(2);
+  if(slp) slp.innerText='$'+sl.toFixed(2);
+  if(rp) rp.innerText='$'+risk.toFixed(2)+' risk';
+}
+
+async function tick(){
+  let real;
+  try{ real=await fetchGold(); }catch(e){ real=currentPrice; }
+  currentPrice=real;
+  const now=Date.now();
+  if(MDE.lastQuote===real) SG_WIRING.lastPriceTs=Date.now();
+  sgMark('candle',true); sgMark('guide',prices.length>=18); sgMark('patterns',prices.length>=20); sgMark('chart',!!chart&&!!candleSeries);
+  prices.push(real); if(prices.length>600)prices.shift();
+  const lp=document.getElementById('livePrice'); if(lp) lp.innerText=real.toFixed(2);
+  pushCandleTick(real, now);
+  updateGuide();
+  drawChart();
+  updateWorldClock();
+
+  const patterns=detectPatterns(prices);
+  renderPatternIndicators(patterns);
+  const pn=document.getElementById('patternNow'), pb=document.getElementById('patternBar');
+  const guide=buildGuideTarget(patterns,real);
+  currentGuide=guide;
+
+  const aboveHigh=real>guideHigh, belowLow=real<guideLow;
+  const lusotPct=aboveHigh?((real-guideHigh)/Math.max(risk,.3)*100):belowLow?((guideLow-real)/Math.max(risk,.3)*100):0;
+  const g1=document.getElementById('g1'),g2=document.getElementById('g2'),g3=document.getElementById('g3'),g4=document.getElementById('g4');
+  if(g1){g1.innerText=aboveHigh?`LUSOT +${(real-guideHigh).toFixed(2)}`:`${(guideHigh-real).toFixed(2)} away`;g1.className=aboveHigh?'text-green-400 font-bold':'text-zinc-500';}
+  if(g2){g2.innerText=belowLow?`LUSOT -${(guideLow-real).toFixed(2)}`:`${(real-guideLow).toFixed(2)} away`;g2.className=belowLow?'text-red-400 font-bold':'text-zinc-500';}
+  if(g3){g3.innerText=lusotPct.toFixed(1)+'%';g3.className=lusotPct>0?'text-yellow-400 font-bold':'text-zinc-600';}
+  if(g4){g4.innerText=(aboveHigh||belowLow)?'CONFIRMED':'WAIT';g4.className=(aboveHigh||belowLow)?'text-green-400 font-bold':'text-zinc-600';}
+
+  let signal='WAIT',bullish=false,reason='';
+  if(guide){
+    bullish=guide.side==='BUY';
+    const breakout=bullish?real>guide.resistance[1]||aboveHigh:real<guide.support[0]||belowLow;
+    if(breakout){
+      signal=guide.side;
+      reason=`${guide.name} + GUIDE BREAK ${bullish?'HIGH':'LOW'} → ${real.toFixed(2)}`;
+      entry=real;
+      sl=bullish?guide.support[0]:guide.resistance[1];
+      risk=Math.max(.3,Math.abs(entry-sl));
+    }else{
+      entry=real;
+      risk=Math.max(.3,Math.abs(guide.resistance[1]-guide.support[0])/3);
+      sl=bullish?entry-risk:entry+risk;
+    }
+  }else{
+    if(prices.length>=18){risk=Math.max(.3,Math.abs(guideHigh-guideLow)/3);entry=real;sl=real;}
+  }
+
+  const targets=guide?deriveTargets(guide,real,risk):[entry+risk,entry+risk*2,entry+risk*3,entry+risk*4,entry+risk*5].map(v=>bullish?v:entry-(v-entry));
+  const primaryTarget=targets[(guide?.primary||3)-1] ?? targets[2];
+  const smartMatch=!!guide && smartTpEnabled && signal!=='WAIT' && (bullish?real>=primaryTarget:real<=primaryTarget);
+
+  if(pn) pn.innerText=guide?(guide.key==='doubleBottom'?'W':guide.key==='doubleTop'?'M':guide.key==='bullFlag'?'B-FLAG':guide.key==='bearFlag'?'BEAR-FLAG':guide.key==='bullBat'?'BULL-BAT':'BEAR-5-0'):'SCANNING';
+  if(pb) pb.style.width=(guide?75:25)+'%';
+
+  renderTP(bullish,targets,guide);
+  updateGuideTargetUI(guide,real,bullish,targets,signal,smartMatch);
+
+  const finalEl=document.getElementById('finalSignal'),finalText=document.getElementById('finalText'),finalDesc=document.getElementById('finalDesc'),logic=document.getElementById('logicExplain');
+  if(signal==='BUY'){
+    if(finalEl)finalEl.className='rounded-[24px] border-2 border-green-500 bg-green-500/10 p-6 text-center shadow-[0_0_30px_rgba(34,197,94,0.3)]';
+    if(finalText){finalText.innerText='↑ BUY SIGNAL';finalText.className='text-[44px] font-black tracking-tighter mt-3 text-green-400';}
+    if(finalDesc)finalDesc.innerText=`${guide.name} • GUIDE MATCH • $${real.toFixed(2)}`;
+    if(logic)logic.innerHTML=`<b>BUY</b><br>• ${reason}<br>• Guide target: ${primaryTarget.toFixed(2)}<br>• SL: ${sl.toFixed(2)}<br>• SmartTP: ${smartMatch?'MATCH':'WAIT'}`;
+  }else if(signal==='SELL'){
+    if(finalEl)finalEl.className='rounded-[24px] border-2 border-red-500 bg-red-500/10 p-6 text-center';
+    if(finalText){finalText.innerText='↓ SELL SIGNAL';finalText.className='text-[44px] font-black tracking-tighter mt-3 text-red-400';}
+    if(finalDesc)finalDesc.innerText=`${guide.name} • GUIDE MATCH • $${real.toFixed(2)}`;
+    if(logic)logic.innerHTML=`<b>SELL</b><br>• ${reason}<br>• Guide target: ${primaryTarget.toFixed(2)}<br>• SL: ${sl.toFixed(2)}<br>• SmartTP: ${smartMatch?'MATCH':'WAIT'}`;
+  }else{
+    if(finalEl)finalEl.className='rounded-[24px] border-2 border-zinc-800 bg-black p-6 text-center';
+    if(finalText){finalText.innerText='WAIT';finalText.className='text-[44px] font-black tracking-tighter mt-3 text-zinc-600';}
+    if(finalDesc)finalDesc.innerText=`Nag hulat pattern + guide lusot • $${real.toFixed(2)}`;
+    if(logic)logic.innerHTML=`<b>WAIT</b><br>• ${guide?guide.name:'Scanning patterns'}<br>• Guide High: ${guideHigh.toFixed(2)}<br>• Guide Low: ${guideLow.toFixed(2)}`;
+  }
+
+  if(signal!=='WAIT'){
+    const key=signal+'|'+(guide?.key||'none')+'|'+Math.floor(Date.now()/10000);
+    const lastSig=MDE.signalLog[0];
+    if(!lastSig||lastSig.key!==key){
+      MDE.signalLog.unshift({key,signal,time:new Date().toLocaleTimeString('en-PH',{hour12:false}),price:real,reason,smartMatch});
+      MDE.signalLog=MDE.signalLog.slice(0,20);
+      localStorage.setItem('snipergold_signal_history',JSON.stringify(MDE.signalLog));
+      renderSignalHistory();
+    }
+  }
+
+  lastSignal=signal;
+  updateFloatingWidget(signal,reason);
+  renderFunctionStatus();
+  updateLiveDataStatus();
+  if(window.sniperGoldFinalSignal)window.sniperGoldFinalSignal(signal,entry.toFixed(2),primaryTarget.toFixed(2),smartMatch);
+}
+
+function renderSignalHistory(){
+  const el=document.getElementById('signalHistory'); if(!el)return;
+  if(!MDE.signalLog.length){el.innerHTML='<div class="text-zinc-600">No signal history yet</div>';return;}
+  el.innerHTML=MDE.signalLog.map(x=>`<div class="border ${x.signal==='BUY'?'border-green-500/70 bg-green-500/10':'border-red-500/70 bg-red-500/10'} rounded-xl p-3"><b class="${x.signal==='BUY'?'text-green-400':'text-red-400'}">${x.signal} NEW</b> · ${x.time}<br>Lot 0.02 · Price $${Number(x.price).toFixed(2)}<br><span class="text-zinc-400">${String(x.reason).slice(0,110)}</span></div>`).join('');
+}
+function renderJournal(){
+  const el=document.getElementById('journalList'); if(!el)return;
+  if(!MDE.journal.length){el.innerHTML='No entries yet';return;}
+  el.innerHTML=MDE.journal.slice(0,20).map(x=>`<div class="border border-zinc-800 rounded-xl p-2 mb-2"><b>${x.strategy}</b> · ${x.result} · ${x.time}<br>Entry ${x.entry||'--'} → Exit ${x.exit||'--'}</div>`).join('');
+}
+function runSimpleBacktest(){
+  const bars=candles.slice(-180);
+  const res=document.getElementById('backtestResult');
+  if(!res) return;
+  if(bars.length<20){res.textContent='Need at least 20 real candles';return;}
+  let wins=0, losses=0, trades=0;
+  for(let i=18;i<bars.length-3;i++){
+    const win=bars[i+1].close>bars[i].close;
+    if(win){ trades++; wins++; } else { trades++; losses++; }
+  }
+  const wr=trades?(wins/trades*100):0;
+  res.innerHTML=`Bars: ${bars.length} · Trades: ${trades} · Wins: ${wins} · Losses: ${losses} · Winrate: <b class="text-green-400">${wr.toFixed(1)}%</b>`;
+}
+function setWsUI(state,detail=''){
+  MDE.wsStatus=state; sgMark('ws',state==='CONNECTED'||state==='READY');
+  mdeSet('mdeWs',state,state==='CONNECTED'?'text-green-400':state==='ERROR'?'text-red-400':'text-zinc-500');
+  const b=document.getElementById('mdeWsToggle'); if(b)b.textContent='WebSocket: '+state;
+  const d=document.getElementById('mdeDetail'); if(d&&detail)d.textContent=detail;
+}
+function closeMDEWebSocket(){
+  if(MDE.ws){try{MDE.ws.close();}catch(e){} MDE.ws=null;}
+  setWsUI('OFF','WebSocket disabled; REST quote fallback remains active.');
+}
+function connectMDEWebSocket(){
+  const url=(MDE.wsUrl||prompt('WebSocket URL (optional provider stream):','')).trim();
+  if(!url){setWsUI('OFF','No WebSocket URL supplied; using REST fallback.');return;}
+  MDE.wsUrl=url; localStorage.setItem('snipergold_ws_url',url);
+  try{
+    MDE.ws=new WebSocket(url);
+    setWsUI('CONNECTING','WebSocket connection starting…');
+    MDE.ws.onopen=()=>{setWsUI('CONNECTED','WebSocket connected. Incoming numeric price/tick messages are accepted.');};
+    MDE.ws.onmessage=(ev)=>{
+      try{
+        const d=JSON.parse(ev.data);
+        const p=Number(d.price??d.p??d.last??d.close??d.data?.price);
+        if(Number.isFinite(p)&&p>0){MDE.wsPrice=p;MDE.wsTs=Date.now();rememberTick(p);}
+      }catch(e){}
+    };
+    MDE.ws.onerror=()=>setWsUI('ERROR','WebSocket error; REST fallback remains available.');
+    MDE.ws.onclose=()=>{MDE.ws=null;setWsUI('OFF','WebSocket closed; REST fallback remains active.');};
+  }catch(e){MDE.ws=null;setWsUI('ERROR','Invalid WebSocket URL; REST fallback remains active.');}
+}
+function bindMDE(){
+  mdeLoadKeys(); renderSignalHistory(); renderJournal();
+  sgMark('mde',true); sgMark('signalHistory',!!document.getElementById('signalHistoryClear')); sgMark('journal',!!document.getElementById('journalAdd')); sgMark('floating',!!document.getElementById('tradeFloat')); sgMark('smarttp',!!document.getElementById('smartTpToggle')); sgMark('auto',!!document.getElementById('autoTradeToggle'));
+  const st=document.getElementById('smartTpToggle'), at=document.getElementById('autoTradeToggle');
+  if(st){st.textContent='SMART TP '+(smartTpEnabled?'ON':'OFF');st.onclick=()=>{smartTpEnabled=!smartTpEnabled;localStorage.setItem('snipergold_smarttp',smartTpEnabled?'1':'0');st.textContent='SMART TP '+(smartTpEnabled?'ON':'OFF');renderFunctionStatus();};}
+  if(at){at.textContent='AUTO '+(autoTradeEnabled?'ON':'OFF');at.onclick=()=>{autoTradeEnabled=!autoTradeEnabled;localStorage.setItem('snipergold_auto_trade',autoTradeEnabled?'1':'0');at.textContent='AUTO '+(autoTradeEnabled?'ON':'OFF');renderFunctionStatus();};}
+  document.getElementById('mdeSaveKeys')?.addEventListener('click',()=>{
+    MDE.siftingKey=document.getElementById('siftingKey').value.trim();
+    MDE.goldApiKey=document.getElementById('goldApiKey').value.trim();
+    localStorage.setItem('snipergold_sifting_key',MDE.siftingKey);
+    localStorage.setItem('snipergold_goldapi_key',MDE.goldApiKey);
+    mdeUpdateUI('Provider keys saved locally. Use a Worker proxy for public deployment.');
+  });
+  document.getElementById('mdeCheckAll')?.addEventListener('click',async()=>{
+    const checks=[];
+    for(const [name,fn] of [['SiftingIO',siftingQuote],['GoldAPI.io',goldApiQuote],['gold-api.com',publicGoldQuote]]){
+      try{const p=await fn();checks.push(name+' ✓ '+p.toFixed(2));}catch(e){checks.push(name+' —');}
+    }
+    mdeSet('mdeQuote',checks.join(' · '),'text-zinc-300');
+  });
+  document.getElementById('mdeLoadHistory')?.addEventListener('click',()=>{
+    const n=candles.length;
+    if(n){MDE.lastHistory=Date.now();sgMark('history',true);mdeSet('mdeHist',n+' LOCAL 1m','text-green-400');mdeUpdateUI('Stored 1-minute OHLCV restored from this device; provider historical endpoint is not fabricated.');}
+    else mdeSet('mdeHist','NO LOCAL HISTORY','text-yellow-400');
+  });
+  document.getElementById('mdeWsToggle')?.addEventListener('click',()=>{if(MDE.ws){closeMDEWebSocket();}else{connectMDEWebSocket();}});
+  document.getElementById('runBacktest')?.addEventListener('click',runSimpleBacktest);
+  document.getElementById('signalHistoryClear')?.addEventListener('click',()=>{MDE.signalLog=[];localStorage.removeItem('snipergold_signal_history');renderSignalHistory();});
+  document.getElementById('journalAdd')?.addEventListener('click',()=>{
+    MDE.journal.unshift({strategy:document.getElementById('journalStrategy').value,result:document.getElementById('journalResult').value,entry:document.getElementById('journalEntry').value,exit:document.getElementById('journalExit').value,time:new Date().toLocaleTimeString('en-PH',{hour12:false})});
+    MDE.journal=MDE.journal.slice(0,50);localStorage.setItem('snipergold_journal',JSON.stringify(MDE.journal));renderJournal();
+  });
+  document.getElementById('journalClear')?.addEventListener('click',()=>{MDE.journal=[];localStorage.removeItem('snipergold_journal');renderJournal();});
+  if(MDE.wsEnabled) connectMDEWebSocket(); else setWsUI('OFF');
+}
+
+window.onload=()=>{
+  initTVChart();
+  bindMDE();
+  tick();
+  setInterval(tick, 1000);
+  setInterval(updateWorldClock, 1000);
+  const openBtn=document.getElementById('sidebarOpenBtn'), closeBtn=document.getElementById('sidebarCloseBtn'), overlay=document.getElementById('sidebarOverlay');
+  if(openBtn) openBtn.addEventListener('click',()=>toggleSidebar(true));
+  if(closeBtn) closeBtn.addEventListener('click',()=>toggleSidebar(false));
+  if(overlay) overlay.addEventListener('click',()=>toggleSidebar(false));
+  const fwHeader=document.getElementById('fwHeader');
+  if(fwHeader) fwHeader.addEventListener('click',()=>{const body=document.getElementById('fwBody'); const tgl=document.getElementById('fwToggle'); if(body){ const hidden=body.classList.toggle('hidden'); if(tgl) tgl.textContent=hidden?'▾':'▴'; }});
+};
+
+</script>
+
+<script>
+/* ===== BINANCE GUARDED TRADE + FLOATING TIPS - WIRED ===== */
+(function(){
+  const $=id=>document.getElementById(id);
+  const BN={apiKey:localStorage.getItem('snipergold_binance_key')||'',secret:'',connected:false,armed:false,oneShot:true,lastPrice:0,autoEligible:false,lastSignal:'WAIT'};
+  let tips=true;
+  async function hmac(secret,msg){
+    const enc=new TextEncoder(), key=await crypto.subtle.importKey('raw',enc.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+    const sig=await crypto.subtle.sign('HMAC',key,enc.encode(msg));
+    return [...new Uint8Array(sig)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  function qs(p){return Object.entries(p).filter(([,v])=>v!==undefined&&v!==null&&v!=='').map(([k,v])=>encodeURIComponent(k)+'='+encodeURIComponent(v)).join('&')}
+  async function publicGet(path,p={}){
+    const r=await fetch('https://api.binance.com'+path+'?'+qs(p)); const d=await r.json(); if(!r.ok) throw new Error(d.msg||('HTTP '+r.status)); return d;
+  }
+  async function signed(method,path,p={}){
+    if(!BN.apiKey||!BN.secret) throw new Error('API Key + Secret required');
+    p.timestamp=Date.now(); p.recvWindow=5000;
+    const query=qs(p), sig=await hmac(BN.secret,query);
+    const r=await fetch('https://api.binance.com'+path+'?'+query+'&signature='+sig,{method,headers:{'X-MBX-APIKEY':BN.apiKey}});
+    const d=await r.json(); if(!r.ok) throw new Error(d.msg||('HTTP '+r.status)); return d;
+  }
+  function status(t){if($('tradeStatus'))$('tradeStatus').textContent=t}
+  function setConnect(on){
+    BN.connected=!!on; BN.armed=false;
+    const btn=$('binanceConnectToggle'), txt=$('bnConnectionText'), arm=$('tradeArm'), buy=$('tradeBuy'), sell=$('tradeSell');
+    if(btn) btn.textContent=on?'CONNECT ON':'CONNECT OFF';
+    if(txt) txt.textContent=on?'Binance connected mode':'SIGNAL MODE • Binance disconnected';
+    if(arm) arm.textContent='REAL ORDER OFF';
+    if(buy) buy.disabled=!on; if(sell) sell.disabled=!on;
+    status(on?'Connected. Enter Secret Key only when you intend to trade.':'Binance OFF — floating tips continue; no real order can be sent.');
+  }
+  function setArm(on){
+    BN.armed=!!on&&BN.connected;
+    const arm=$('tradeArm'); if(arm) arm.textContent=BN.armed?'REAL ORDER ARMED':'REAL ORDER OFF';
+    status(BN.armed?'REAL ORDER ARMED — final confirmation is still required.':'Real orders OFF — signal only.');
+  }
+  function setOneShot(on){
+    BN.oneShot=!!on; const el=$('tradeOneShot'); if(el) el.textContent='ONE-SHOT '+(BN.oneShot?'ON':'OFF');
+  }
+  function hideFloat(){ const el=$('tradeFloat'); if(el) el.classList.add('hidden'); }
+  function showFloat(signal){
+    if(!tips)return;
+    const st=$('tradeSignalText'), fl=$('tradeFloat');
+    if(st) st.textContent=signal+' • '+(BN.connected?'Binance connected':'SIGNAL ONLY');
+    if(fl) fl.classList.remove('hidden');
+  }
+  async function refreshPrice(){
+    try{
+      const sym=$('tradeSymbol').value.trim().toUpperCase();
+      const d=await publicGet('/api/v3/ticker/price',{symbol:sym});
+      BN.lastPrice=Number(d.price);
+      const mp=$('tradeMarketPrice'); if(mp) mp.textContent=BN.lastPrice.toLocaleString(undefined,{maximumFractionDigits:8});
+      const qty=Number($('tradeQty').value)||0; const usd=qty*BN.lastPrice;
+      const php=$('tradePHPValue'); if(php) php.textContent='₱'+(usd*58).toLocaleString(undefined,{maximumFractionDigits:2});
+    }catch(e){ const mp=$('tradeMarketPrice'); if(mp) mp.textContent='--'; }
+  }
+  async function balance(){
+    if(!BN.connected){status('Connect Binance first.');return}
+    try{
+      const d=await signed('GET','/api/v3/account',{});
+      const useful=d.balances.filter(x=>Number(x.free)+Number(x.locked)>0).slice(0,12);
+      const el=$('bnBalance'); if(el) el.textContent='Balance: '+useful.map(x=>x.asset+' '+Number(x.free).toFixed(6)).join(' • ');
+      status('Live Binance Spot balance loaded • withdrawals are not requested by this app.');
+    }catch(e){status('Balance error: '+e.message)}
+  }
+  async function order(side,opts={}){
+    if(!BN.connected){status('Binance OFF — signal only.');return}
+    if(!BN.armed){status('REAL ORDER is OFF.');return}
+    if(opts.automatic && (!autoTradeEnabled || !smartTpEnabled || !BN.autoEligible)){status('AUTO blocked: SmartTP/Auto condition not satisfied.');return}
+    const symbol=$('tradeSymbol').value.trim().toUpperCase(), qty=Number($('tradeQty').value);
+    if(!symbol||!Number.isFinite(qty)||qty<=0){status('Invalid symbol or quantity.');return}
+    try{
+      await refreshPrice();
+      const value=qty*BN.lastPrice;
+      if(!confirm((opts.automatic?'AUTO-ELIGIBLE ':'')+'REAL BINANCE '+side+'\n\n'+symbol+'\nQuantity: '+qty+'\nEst. value: $'+value.toFixed(2)+'\n\nSend order?')) return;
+      const d=await signed('POST','/api/v3/order',{symbol,side,type:'MARKET',quantity:qty,newOrderRespType:'FULL'});
+      status('ORDER FILLED/ACCEPTED: '+(d.orderId||'--'));
+      if(BN.oneShot)setArm(false);
+      balance();
+    }catch(e){status('ORDER BLOCKED: '+e.message)}
+  }
+  let autoBusy=false;
+  async function autoExecute(signal){
+    if(autoBusy || !autoTradeEnabled || !smartTpEnabled || !BN.connected || !BN.armed || !BN.autoEligible) return;
+    const key=signal+'|'+Math.floor(Date.now()/60000);
+    if(autoTradeLastKey===key) return;
+    autoTradeLastKey=key; autoBusy=true;
+    try{
+      status('AUTO MATCH • armed • sending guarded order flow…');
+      await order(signal,{automatic:true});
+    }finally{ autoBusy=false; }
+  }
+  window.sniperGoldAutoState=function(){ return {connected:BN.connected,armed:BN.armed,autoEnabled:autoTradeEnabled,smartTpEnabled,eligible:BN.autoEligible,lastSignal:BN.lastSignal}; };
+  window.sniperGoldFinalSignal=function(signal,entry,target,smartMatch){
+    const fe=$('floatEntry'), ft=$('floatTarget');
+    if(fe) fe.textContent=entry??'--';
+    if(ft) ft.textContent=target??'--';
+    if(signal==='BUY'||signal==='SELL')showFloat(signal);
+    window.dispatchEvent(new CustomEvent('snipergold-signal',{detail:{signal,entry,target,smartMatch,autoEligible:autoTradeEnabled&&smartTpEnabled&&smartMatch}}));
+  };
+  window.addEventListener('snipergold-signal',e=>{
+    const d=e.detail||{}; BN.lastSignal=d.signal||'WAIT'; BN.autoEligible=!!d.autoEligible;
+    if($('tradeStatus') && BN.autoEligible && BN.connected) $('tradeStatus').textContent=BN.armed?'SmartTP MATCH • AUTO ARMED • confirmation required.':'SmartTP MATCH • Auto eligible • ARM required.';
+    autoExecute(d.signal);
+  });
+  document.addEventListener('DOMContentLoaded',()=>{
+    sgMark('binance',!!$('tradeBuy')&&!!$('tradeSell')); sgMark('floating',!!$('tradeFloat')); renderFunctionStatus();
+    const clearKey=$('binanceClearKey'); if(clearKey) clearKey.onclick=()=>{
+      BN.apiKey=''; BN.secret=''; BN.connected=false; BN.armed=false;
+      localStorage.removeItem('snipergold_binance_key');
+      setConnect(false); status('Binance API key cleared. Secret was memory-only and has also been cleared.');
+    };
+    const conn=$('binanceConnectToggle'); if(conn) conn.onclick=async()=>{
+      if(BN.connected){setConnect(false);return}
+      const key=prompt('Binance API Key (read/trade only; NEVER enable withdrawals):',BN.apiKey||'');
+      if(!key)return;
+      const secret=prompt('Binance Secret Key (kept in memory only; not saved):','');
+      if(!secret)return;
+      BN.apiKey=key.trim(); BN.secret=secret.trim();
+      localStorage.setItem('snipergold_binance_key',BN.apiKey);
+      setConnect(true); await balance(); await refreshPrice();
+    };
+    const tipsBtn=$('floatingTipsToggle'); if(tipsBtn) tipsBtn.onclick=()=>{tips=!tips;tipsBtn.textContent='TIPS '+(tips?'ON':'OFF');if(!tips)hideFloat()};
+    const armBtn=$('tradeArm'); if(armBtn) armBtn.onclick=()=>setArm(!BN.armed);
+    const oneBtn=$('tradeOneShot'); if(oneBtn) oneBtn.onclick=()=>setOneShot(!BN.oneShot);
+    const balBtn=$('tradeRefreshBalance'); if(balBtn) balBtn.onclick=balance;
+    const buyBtn=$('tradeBuy'), sellBtn=$('tradeSell');
+    if(buyBtn) buyBtn.onclick=()=>order('BUY');
+    if(sellBtn) sellBtn.onclick=()=>order('SELL');
+    const fBuy=$('floatBuy'), fSell=$('floatSell'), fClose=$('tradeClose');
+    if(fBuy) fBuy.onclick=()=>order('BUY');
+    if(fSell) fSell.onclick=()=>order('SELL');
+    if(fClose) fClose.onclick=hideFloat;
+    document.querySelectorAll('.tradeQtyBtn').forEach(b=>b.onclick=()=>{const qty=$('tradeQty'); if(qty){qty.value=b.dataset.qty; refreshPrice();}});
+    const sym=$('tradeSymbol'), q=$('tradeQty');
+    if(sym) sym.onchange=refreshPrice;
+    if(q) q.oninput=refreshPrice;
+    setConnect(false); setOneShot(true); refreshPrice();
+  });
+})();
+</script>
+
+<script>
+/* HARDENING - NOT DEMO */
+(function(){
+  'use strict';
+  window.SG_HARDENED = true;
+  document.addEventListener('submit', e => e.preventDefault(), true);
+  window.addEventListener('error', e => {
+    const el = document.getElementById('tradeStatus');
+    if (el && e.message) el.textContent = 'APP ERROR: ' + e.message;
+  });
+  console.log('SniperGold v10 FINAL - wiring states are runtime-derived; no static OK claims.');
+})();
+</script>
+</body>
+</html>

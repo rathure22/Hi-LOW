@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="com.rathure22.snipergold" version="10.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>SniperGold</name>
+  <description>SniperGold V10 pattern, guide target, SmartTP and guarded Binance controls.</description>
+  <author email="">rathure22</author>
+  <content src="index.html" />
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-navigation href="*" />
+  <preference name="Fullscreen" value="false" />
+  <preference name="Orientation" value="portrait" />
+  <preference name="AndroidXEnabled" value="true" />
+  <preference name="DisallowOverscroll" value="true" />
+  <icon src="res/icon/ic_launcher_512.png" />
+  <icon density="mdpi" src="res/icon/mipmap-mdpi/ic_launcher.png" />
+  <icon density="hdpi" src="res/icon/mipmap-hdpi/ic_launcher.png" />
+  <icon density="xhdpi" src="res/icon/mipmap-xhdpi/ic_launcher.png" />
+  <icon density="xxhdpi" src="res/icon/mipmap-xxhdpi/ic_launcher.png" />
+  <icon density="xxxhdpi" src="res/icon/mipmap-xxxhdpi/ic_launcher.png" />
+  <platform name="android">
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/uses-permission" xmlns:android="http://schemas.android.com/apk/res/android">
+    </edit-config>
+  </platform>
+</widget>
